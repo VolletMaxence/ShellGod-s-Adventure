@@ -15,6 +15,7 @@ import entities.Follower;
 import entities.Wanderer;
 
 public class VueDonjon extends JFrame {
+	private static VueDonjon instance;
 	private Donjon donjon;
 	private JPanel panel;
 	private BufferedImage playerImage;
@@ -39,6 +40,16 @@ public class VueDonjon extends JFrame {
 					case KeyEvent.VK_DOWN -> donjon.getJoueur().move(0, 1, cases);
 					case KeyEvent.VK_LEFT -> donjon.getJoueur().move(-1, 0, cases);
 					case KeyEvent.VK_RIGHT -> donjon.getJoueur().move(1, 0, cases);
+					case KeyEvent.VK_R -> {
+						dispose(); // Fermer la fenêtre VueDonjon
+						Menu menu = null;
+						try {
+							menu = new Menu();
+						} catch (IOException ex) {
+							throw new RuntimeException(ex);
+						}
+						menu.setVisible(true); // Afficher la fenêtre Menu
+					}
 					default -> {
 					}
 				}
@@ -55,6 +66,15 @@ public class VueDonjon extends JFrame {
 				finPartie();
 			}
 		});
+
+	}
+
+
+	public static VueDonjon getInstance(Donjon donjon) {
+		if (instance == null) {
+			instance = new VueDonjon(donjon);
+		}
+		return instance;
 	}
 
 	public void drowEtage()
