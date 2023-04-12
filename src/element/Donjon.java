@@ -51,7 +51,7 @@ public class Donjon extends JPanel {
         for (int i = 0; i < salles.size(); i++) {
             Random random = new Random();
             int valeur = random.nextInt(100) + 1;
-            if(valeur != 1) {
+            if(valeur > 5) {
                 genererEnnemie("Wanderer");
             } else {
                 genererEnnemie("Follower");
