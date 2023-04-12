@@ -1,10 +1,12 @@
 import element.Donjon;
+import ui.Menu;
 import ui.VueDonjon;
 
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) {
-        Donjon donjon = new Donjon(20, 20, 0);
-        VueDonjon vueDonjon = new VueDonjon(donjon);
-        vueDonjon.setVisible(true);
+    public static void main(String[] args) throws IOException {
+        Menu menu = new Menu();
+        menu.setVisible(true);
     }
 }

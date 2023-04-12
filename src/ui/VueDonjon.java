@@ -24,7 +24,9 @@ public class VueDonjon extends JFrame {
 	public VueDonjon(Donjon donjon) {
 		this.donjon = donjon;
 		setSize(800, 600);
+		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false); // Désactiver la redimension
 		setTitle("ShellGod's Adventure");
 		chargerImages();
 
@@ -135,7 +137,6 @@ public class VueDonjon extends JFrame {
 			if(ennemie.getaCoteJoueur())
 			{
 				//Fin de jeu
-				System.out.println("! FIN DE PARTIE !");
 			}
 		}
 	}
