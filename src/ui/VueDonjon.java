@@ -41,9 +41,9 @@ public class VueDonjon extends JFrame {
 					case KeyEvent.VK_RIGHT -> donjon.getJoueur().move(1, 0, cases);
 					case KeyEvent.VK_R -> {
 						dispose(); // Fermer la fenêtre VueDonjon
-						Menu menu = null;
+						MenuV2 menu = null;
 						try {
-							menu = new Menu();
+							menu = new MenuV2();
 						} catch (IOException ex) {
 							throw new RuntimeException(ex);
 						}
