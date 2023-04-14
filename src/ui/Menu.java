@@ -13,6 +13,20 @@ import java.io.IOException;
 public class Menu extends JFrame {
     private static Menu instance;
     public Menu() throws IOException {
+
+        // Charger l'image de fond
+        BufferedImage backgroundImage = ImageIO.read(new File("src/asset/LogoSGA.png"));
+
+        // Créer un JPanel personnalisé pour afficher l'image de fond
+        JPanel backgroundPanel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), null);
+            }
+        };
+        backgroundPanel.setLayout(new BorderLayout());
+
         // Créer le bouton pour lancer le jeu
         JButton jouer = new JButton("Jouer");
         jouer.addActionListener(new ActionListener() {
