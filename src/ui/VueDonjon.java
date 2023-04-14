@@ -43,11 +43,11 @@ public class VueDonjon extends JFrame {
 						dispose(); // Fermer la fenêtre VueDonjon
 						MenuV2 menu = null;
 						try {
-							menu = new MenuV2();
+							MenuV2 menu2 = MenuV2.getInstance();
+							menu2.setVisible(true);
 						} catch (IOException ex) {
 							throw new RuntimeException(ex);
 						}
-						menu.setVisible(true); // Afficher la fenêtre Menu
 					}
 					default -> {
 					}
@@ -55,7 +55,7 @@ public class VueDonjon extends JFrame {
 				// vérifie si le joueur est sur un escalier
 				Case caseJoueur = cases.get(donjon.getJoueur().getPosX() * Donjon.getTailleX() + donjon.getJoueur().getPosY());
 				if (caseJoueur instanceof Escalier) {
-					System.out.println("Sur Escalier");
+					//System.out.println("Sur Escalier");
 					donjon.genererEtage();
 					drowEtage();
 				}

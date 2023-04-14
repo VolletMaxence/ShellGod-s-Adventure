@@ -11,7 +11,8 @@ import java.io.File;
 import java.io.IOException;
 
 public class MenuV2 extends JFrame {
-    public MenuV2() throws IOException {
+    private static MenuV2 instance;
+    private MenuV2() throws IOException {
         // Charger l'image de fond
         BufferedImage backgroundImage = ImageIO.read(new File("src/asset/LogoSGA.png"));
 
@@ -27,7 +28,7 @@ public class MenuV2 extends JFrame {
         JPanel contentPane = new JPanel(new BorderLayout());
         contentPane.setLayout(new BorderLayout());
         //Ajouter bouton
-        jouer.setPreferredSize(new Dimension(200, 200));
+        jouer.setPreferredSize(new Dimension(150, 75));
 
         //Création du JPanel pour le boutton, on y ajoute la backgroundImage  pour pouvoir l'afficher
         JPanel panelBouton = new JPanel(new GridBagLayout()) {
@@ -61,6 +62,13 @@ public class MenuV2 extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false); // Désactiver la redimension
         setTitle("ShellGod's Adventure");
+    }
+
+    public static MenuV2 getInstance() throws IOException {
+        if (instance == null) {
+            instance = new MenuV2();
+        }
+        return instance;
     }
 
     public void launchGame() {

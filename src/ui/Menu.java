@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class Menu extends JFrame {
+    private static Menu instance;
     public Menu() throws IOException {
         // Créer le bouton pour lancer le jeu
         JButton jouer = new JButton("Jouer");
@@ -65,6 +66,13 @@ public class Menu extends JFrame {
         getContentPane().setBackground(new Color(22, 22, 29));
         // Changer la couleur du texte
         setForeground(Color.WHITE);
+    }
+
+    public static Menu getInstance() throws IOException {
+        if (instance == null) {
+            instance = new Menu();
+        }
+        return instance;
     }
 
     public void launchGame() {
