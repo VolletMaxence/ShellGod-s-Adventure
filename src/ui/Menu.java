@@ -70,8 +70,7 @@ public class Menu extends JFrame {
     public void launchGame() {
         // Configurer la nouvelle instance de Donjon
         Donjon donjon = new Donjon(20, 20, 0);
-        // Récupérer l'instance unique de VueDonjon
-        VueDonjon vueDonjon = VueDonjon.getInstance(donjon);
+        VueDonjon vueDonjon = new VueDonjon(donjon);
         // Configurer la VueDonjon existante pour afficher le nouveau Donjon
         vueDonjon.setVisible(true);
         // Fermer l'écran de menu
