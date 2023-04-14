@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
         Menu menu = new Menu();
-        //MenuV2 menu = new MenuV2();
-        menu.setVisible(true);
+        MenuV2 menu2 = new MenuV2();
+        menu2.setVisible(true);
     }
 }
