@@ -15,7 +15,8 @@ public class MenuV2 extends JFrame {
     private MenuV2() throws IOException {
         // Charger l'image de fond
         BufferedImage backgroundImage = ImageIO.read(new File("src/asset/LogoSGA.png"));
-
+        ImageIcon icon = new ImageIcon("src/asset/Shellos_Kamina.png");
+        setIconImage(icon.getImage());
         // Créer le bouton pour lancer le jeu
         JButton jouer = new JButton("Jouer");
         jouer.addActionListener(new ActionListener() {

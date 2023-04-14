@@ -29,6 +29,8 @@ public class VueDonjon extends JFrame {
 		setResizable(false); // Désactiver la redimension
 		setTitle("ShellGod's Adventure");
 		chargerImages();
+		ImageIcon icon = new ImageIcon("src/asset/Shellos_Kamina.png");
+		setIconImage(icon.getImage());
 
 		drowEtage();
 		addKeyListener(new KeyAdapter() {
@@ -120,7 +122,6 @@ public class VueDonjon extends JFrame {
 						Donjon.getTailleX(),
 						Donjon.getTailleY()
 				);
-
 				Case prochaineCaseEnnemie = cheminVersJoueur.get(1);
 				int changementX = prochaineCaseEnnemie.getX() - ennemie.getPosX();
 				int changementY = prochaineCaseEnnemie.getY() - ennemie.getPosY();
